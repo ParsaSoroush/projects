@@ -1,12 +1,12 @@
 def reverse_words(Sentence):
     
-    words = Sentence.split(" ")
+    list1 = Sentence.split(" ")
 
-    new_word_list = [word[::-1] for word in words]
+    new_word_list = [word[::-1] for word in list1]
     
     
-    res_str = " ".join(new_word_list)
-    return res_str
+    str = " ".join(new_word_list)
+    return str
 
 str1 = "My Name is Parsa"
 print(reverse_words(str1))
