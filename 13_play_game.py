@@ -1,7 +1,13 @@
 import random
 
 def choose_word():
-   words = ["apple", "banana", "orange", "grape", "strawberry","lamborghini","car","motorcycel","benz","bmw","fotball","volyball","purpul","red","pink","black","white","baketball","ball","king","queen","laptop","pc","art","light","work","HTML","javascript","python","css","code","codeing","mouse","keyboard","display","xbox","playstation","dualsens","dualshoke","charge","robot","table","dor","click","toilet","freand","father","mother","sister","brother"]
+   words = ["apple", "banana", "orange", "grape", "strawberry","lamborghini",
+   "car","motorcycel","benz","bmw","fotball","volyball","purpul","red",
+   "pink","black","white","baketball","ball","king","queen","laptop",
+   "pc","art","light","work","HTML","javascript","python","css","code",
+   "codeing","mouse","keyboard","display","xbox","playstation","dualsens",
+   "dualshoke","charge","robot","table","dor","click","toilet","freand",
+   "father","mother","sister","brother"]
    return random.choice(words)
 
 def play_game():
