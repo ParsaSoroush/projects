@@ -7,7 +7,9 @@ def choose_word():
    "pc","art","light","work","HTML","javascript","python","css","code",
    "codeing","mouse","keyboard","display","xbox","playstation","dualsens",
    "dualshoke","charge","robot","table","dor","click","toilet","freand",
-   "father","mother","sister","brother"]
+   "father","mother","sister","brother","sheep","dog","cat","horse","red dead"
+   ,"gta","fifa","mincraft","google","nose","ears","eye","turtule","wolf","key","wc",
+   ]
    return random.choice(words)
 
 def play_game():
