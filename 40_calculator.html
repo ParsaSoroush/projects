@@ -43,17 +43,22 @@
             font-size: 1.2em;
             border-radius: 5px;
             border: none;
-            color: white;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .number {
             background-color: gray;
+            color: white;
         }
         .operator {
             background-color: orange;
+            color: white;
         }
-        .special {
-            background-color: white;
-            color: black;
+        .specials {
+            background-color: #fff;
+            color: #fff;
         }
     </style>
 </head>
@@ -61,14 +66,14 @@
     <div class="calculator">
         <input type="text" class="display" readonly>
         <div class="buttons">
-            <button class="button special">AC</button>
-            <button class="button special">( )</button>
-            <button class="button special">%</button>
+            <button class="button specials">AC</button>
+            <button class="button specials">( )</button>
+            <button class="button specials">%</button>
             <button class="button operator">/</button>
             <button class="button number">7</button>
             <button class="button number">8</button>
             <button class="button number">9</button>
-            <button class="button operator">*</button>
+            <button class="button operator">X</button>
             <button class="button number">4</button>
             <button class="button number">5</button>
             <button class="button number">6</button>
@@ -77,9 +82,8 @@
             <button class="button number">2</button>
             <button class="button number">3</button>
             <button class="button operator">+</button>
-            <button class="button number">0</button>
-            <button class="button number">.</button>
-            <button class="button number">C</button>
+            <button class="button number" style="grid-column: span 2;">0</button>
+            <button class="button operator">.</button>
             <button class="button operator">=</button>
         </div>
     </div>
