@@ -1,12 +1,11 @@
-def reverse_words(Sentence):
-    
-    list1 = Sentence.split(" ")
+x = input("number:")
+x=int(x)
+c=0
+for i in range(1,x):
+    if (x%i==0):
+        c+=1
+if (c==1):
+    print("okey")
 
-    new_word_list = [word[::-1] for word in list1]
-    
-    
-    str = " ".join(new_word_list)
-    return str
-
-str1 = "My Name is Parsa"
-print(reverse_words(str1))
+else:
+    print("NOT okey")
