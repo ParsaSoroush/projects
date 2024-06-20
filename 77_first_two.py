@@ -13,4 +13,4 @@ if len(ages) < 2:
 else:
     ages.sort()
     print("The oldest candidate is", ages[-1], "years old.")
-    print("The second oldest candidate is", ages[-2], "years old.")
+    print("The second oldest candidate is", ages[-2], "years old.")_
