@@ -1,11 +1,5 @@
-x = input("number:")
-x=int(x)
-c=0
-for i in range(1,x):
-    if (x%i==0):
-        c+=1
-if (c==1):
-    print("okey")
+string = "course python in maktabkhooneh"
 
-else:
-    print("NOT okey")
+string = string[:17]+"maktabkhooneh.org"
+
+print(string)
