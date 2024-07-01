@@ -13,7 +13,7 @@ for i in range(360):
     x = first(math.radians(i)) * 10
     y = second(math.radians(i)) * 10
     goto(x, y)
-    color("#F52375")
+    color("green")
     goto(0, 0)
 
 done()
