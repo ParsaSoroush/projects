@@ -3,7 +3,7 @@ def find_oldest_candidate():
 
     while True:
         try:
-            age = int(input("Enter candidates age: "))
+            age = int(input(""))
 
             if age <0:
                 break
@@ -16,7 +16,7 @@ def find_oldest_candidate():
         except ValueError:
             print("Please enter a valid integer.")
 
-    print("The age of the oldest cndidate is:", max_age)
+    print(max_age)
 
 find_oldest_candidate()
 
