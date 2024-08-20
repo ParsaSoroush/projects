@@ -108,8 +108,8 @@ def calculate_average_of_averages():
 def main():
 
     calculate_averages()
-    # calculate_sorted_averages()
-    # calculate_three_best()
-    # calculate_three_worst()
-    # calculate_average_of_averages()
+    calculate_sorted_averages()
+    calculate_three_best()
+    calculate_three_worst()
+    calculate_average_of_averages()
 main()
