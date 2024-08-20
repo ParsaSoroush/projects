@@ -1,16 +1,21 @@
-ages = []
-while True:
-    age = int(input("Enter the age of the candidate: "))
-    if age < 0:
-        break
-    if age < 10 or age > 90:
-        print("Invalid age. Age should be between 10 and 90.")
-        continue
-    ages.append(age)
+max_age = -1
+secende_max_age = -1
 
-if len(ages) < 2:
-    print("At least two candidates are required to find the oldest and the second oldest.")
-else:
-    ages.sort()
-    print("The oldest candidate is", ages[-1], "years old.")
-    print("The second oldest candidate is", ages[-2], "years old.")_
+while True:
+
+    age = int(input())
+
+    if age == -1:
+        break
+
+    if age < 10 or age > 90:
+        print("the age coulde be in 10 years old to 90 years old")
+        continue
+
+    if age > max_age:
+        secende_max_age = max_age
+        max_age = age
+    elif age > secende_max_age:
+        secende_max_age = age
+
+print(max_age, secende_max_age)

@@ -1,4 +1,4 @@
-age = int(input("Enter the person's age: "))
+age = int(input(""))
 
 if age > 0 and age < 6:
     print("khordsal")
@@ -10,7 +10,5 @@ elif age >= 14 and age < 24:
     print("javan")
 elif age >= 24 and age < 40:
     print("bozorgsal")
-elif age == 40:
+elif age != 40:
     print("miansal")
-else:
-    print("Invalid age range")

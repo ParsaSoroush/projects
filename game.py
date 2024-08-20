@@ -1,12 +1,12 @@
 import random
 
 def guess_number():
-    # Generate a random number between 1 and 100
-    secret_number = random.randint(1, 200)
+    
+    secret_number = random.randint(1, 100)
     attempts = 0
     
     print("Welcome to the Guessing Game!")
-    print("I have chosen a number between 1 and 200. Try to guess it.")
+    print("I have chosen a number between 1 and 100. Try to guess it.")
     
     while True:
         guess = int()

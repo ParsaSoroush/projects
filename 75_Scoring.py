@@ -1,9 +1,14 @@
-sampel_input = [3,3,3,3,0,0,0,0,0,1,
-1,1,1,1,1,3,3,3,3,3,0,
-0,0,0,0,1,1,1,1,1]
+points = 0
+wins = 0
 
-total_point = sum(sampel_input)
 
-wins = sampel_input.count(3)
+for _ in range(30):
 
-print(total_point,wins)
+    p = int(input(""))
+    points += p
+
+    if p == 3:
+        wins += 1
+
+
+print(points, wins)
