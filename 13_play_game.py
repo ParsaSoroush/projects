@@ -26,7 +26,9 @@ def choose_word():
                "result","rub","yard","experience","terminal","angel","sheet","bold","module","budge","toll","detail","transform",
                "bag","suspect","beginning","soap","treat","aroww","rage","clothes","scan","trap","drink","official","jury","lemon",
                "director","lie","prize","law","ask","tick","trend","job","manual","base","trait","fuel","ant","prcess","grant","call",
-               "border","bring","rate","anger"]
+               "border","bring","rate","anger","doller","adderes","engain","sleep","local","mentor","edition","donkey","haaland",
+               "salah","nonez","vandijk","taremi","jahanbakhsh","beyranvand","bekham","grilish","mane","vini","blingham","walker",
+               "dimaria","bleses"]
    return random.choice(words)
 
 def play_game():
@@ -34,8 +36,6 @@ def play_game():
     word_to_guess = choose_word()
     attempts = 15
     guessed_word = ["_"] * len(word_to_guess)
-    
-    print("Welcome to the Name Guessing Game!")
     print("The word has {} letters. You have {} attempts.".format(len(word_to_guess), attempts))
     
     while attempts > 0 and "_" in guessed_word:
@@ -48,6 +48,7 @@ def play_game():
         
         guessed_letters.append(guess)
         
+
         if guess in word_to_guess:
             print("Correct guess!")
             for i in range(len(word_to_guess)):
