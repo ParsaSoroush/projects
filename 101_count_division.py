@@ -1,23 +1,35 @@
-def count_divisors(n):
+def count_prime_divisors(n):
     count = 0
-    n = int(n)
-    for i in range(1, n + 1):
+    for i in range(2, int(n ** 0.5) + 1):
         if n % i == 0:
-            count += 1
+            if is_prime(i):
+                count += 1
+            if i != n // i and is_prime(n // i):
+                count += 1
+    if is_prime(n):
+        count += 1
     return count
+
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 numbers = []
 for _ in range(10):
-    num = float(input())
-    numbers.append(num)
+    numbers.append(int(input()))
 
-max_number = max(numbers)
-divisors = count_divisors(max_number)
+max_divisors = 0
+max_number = 0
+for num in numbers:
+    divisors = count_prime_divisors(num)
+    if divisors > max_divisors:
+        max_divisors = divisors
+        max_number = num
+    elif divisors == max_divisors:
+        max_number = max(max_number, num)
 
-
-if max_number.is_integer():
-    max_number = int(max_number)
-else:
-    max_number = round(max_number, 2)
-
-print(max_number, divisors)
+print(max_number, max_divisors)
