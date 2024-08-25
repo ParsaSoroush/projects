@@ -26,15 +26,15 @@ def main():
     classroom_b = Classroom('B')
 
     num_students_a = int(input())
-    ages_a = list(map(int, input().split()))
-    heights_a = list(map(int, input().split()))
-    weights_a = list(map(int, input().split()))
+    ages_a = list(map(float, input().split()))
+    heights_a = list(map(float, input().split()))
+    weights_a = list(map(float, input().split()))
+
 
     num_students_b = int(input())
-    ages_b = list(map(int, input().split()))
-    heights_b = list(map(int, input().split()))
-    weights_b = list(map(int, input().split()))
-
+    ages_b = list(map(float, input().split()))
+    heights_b = list(map(float, input().split()))
+    weights_b = list(map(float, input().split()))
     for i in range(num_students_a):
         classroom_a.add_student(ages_a[i], heights_a[i], weights_a[i])
 
@@ -44,12 +44,12 @@ def main():
     avg_age_a, avg_height_a, avg_weight_a = classroom_a.calculate_average()
     avg_age_b, avg_height_b, avg_weight_b = classroom_b.calculate_average()
 
-    print(f"{avg_age_a:.1f}")
-    print(f"{avg_height_a:.1f}")
-    print(f"{avg_weight_a:.1f}")
-    print(f"{avg_age_b:.1f}")
-    print(f"{avg_height_b:.1f}")
-    print(f"{avg_weight_b:.1f}")
+    print(repr(avg_age_a))
+    print(repr(avg_height_a))
+    print(repr(avg_weight_a))
+    print(repr(avg_age_b))
+    print(repr(avg_height_b))
+    print(repr(avg_weight_b))
 
     if avg_height_a > avg_height_b:
         print("A")
