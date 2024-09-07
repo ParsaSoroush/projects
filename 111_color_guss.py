@@ -1,6 +1,5 @@
 import random
 
-
 def color_guess():
     colors = ["red", "blue", "green", "yellow", "purple", "orange", "black", "white","brown", "pink", "gray", "silver","gold","crimson","bronze"]
     color_to_guess = random.choice(colors)

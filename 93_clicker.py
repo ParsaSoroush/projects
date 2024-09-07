@@ -71,8 +71,8 @@ def get_user_input():
     input_root = tk.Tk()
     input_root.withdraw()
 
-    clicks = simpledialog.askinteger("Input", ": تعداد کلیک ها را مشخص کنید", minvalue=1, maxvalue=10000)
-    interval = simpledialog.askfloat("Input", " : سرعت کلیک ها را مشخص کنید (بر ثانیه)", minvalue=0.01, maxvalue=100.0)
+    clicks = simpledialog.askinteger("Input", "tedad click ha ra mosha khas konid", minvalue=1, maxvalue=10000)
+    interval = simpledialog.askfloat("Input", "sorat click ha ra moshakhas konid (bar sania)", minvalue=0.01, maxvalue=100.0)
 
     input_root.destroy()
     return clicks, interval
