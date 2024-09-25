@@ -6,14 +6,20 @@ from typing import List
 import os
 import bcrypt
 
+
 app = FastAPI()
+
+
 
 users = {}
 posts = []
 
+
+
 class User(BaseModel):
     username: str
     password: str
+
 
 class Post(BaseModel):
     id: int
@@ -21,11 +27,13 @@ class Post(BaseModel):
     caption: str
     image_url: str
 
+
 class Comment(BaseModel):
     id: int
     post_id: int
     user_id: int
     text: str
+
 
 async def authenticate_user(username: str, password: str):
     if username in users:
@@ -34,8 +42,12 @@ async def authenticate_user(username: str, password: str):
             return users[username]
     return None
 
+
+
 async def get_current_user(username: str, password: str):
     return await authenticate_user(username, password)
+
+
 
 @app.post("/signup")
 async def signup(user: User):
@@ -46,12 +58,16 @@ async def signup(user: User):
     users[user.username] = {"password": hashed_password, "posts": [], "id": user_id}
     return JSONResponse(content={"message": "User created successfully", "user_id": user_id, "hashed_password": hashed_password}, status_code=201)
 
+
+
 @app.post("/login")
 async def login(user: User):
     authenticated_user = await authenticate_user(user.username, user.password)
     if authenticated_user:
         return JSONResponse(content={"message": "Logged in successfully"}, status_code=200)
     raise HTTPException(status_code=401, detail="Invalid credentials")
+
+
 
 @app.post("/logout")
 async def logout(username: str, password: str):
@@ -61,8 +77,12 @@ async def logout(username: str, password: str):
         return JSONResponse(content={"message": "Logged out successfully"}, status_code=200)
     raise HTTPException(status_code=401, detail="Invalid credentials")
 
+
+
 async def save_file(file: UploadFile):
     
+
+
     upload_dir = "uploads"
     if not os.path.exists(upload_dir):
         os.makedirs(upload_dir)
@@ -70,6 +90,8 @@ async def save_file(file: UploadFile):
     with open(file_path, "wb") as f:
         f.write(await file.read())
     return file_path
+
+
 
 @app.post("/post")
 async def create_post(username: str, password: str, caption: str, image: UploadFile = File(...)):
@@ -80,6 +102,8 @@ async def create_post(username: str, password: str, caption: str, image: UploadF
         users[username]["posts"].append(post_id)
         return JSONResponse(content={"message": "Post created successfully", "post_id": post_id}, status_code=201)
     raise HTTPException(status_code=401, detail="Invalid credentials")
+
+
 
 @app.post("/comment/{post_id}")
 async def create_comment(post_id: int, username: str, password: str, text: str):
@@ -93,9 +117,13 @@ async def create_comment(post_id: int, username: str, password: str, text: str):
         raise HTTPException(status_code=404, detail="Post not found")
     raise HTTPException(status_code=401, detail="Invalid credentials")
 
+
+
 @app.get("/posts")
 async def get_all_posts():
     return JSONResponse(content={"posts": posts}, status_code=200)
+
+
 
 @app.delete("/post/{post_id}")
 async def delete_post(post_id: int, user: User = Depends(get_current_user)):
