@@ -1,2 +1,0 @@
-user = input("Please select one of thees options:
-")
